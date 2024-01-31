@@ -10,7 +10,7 @@ import {
   Box,
   HStack,
 } from '@chakra-ui/react';
-import './home.css';
+import './Home.css';
 import logo from '../../assets/images/logo.png';
 import { CgGoogle, CgYoutube } from 'react-icons/cg';
 import { SiCoursera, SiUdemy } from 'react-icons/si';
