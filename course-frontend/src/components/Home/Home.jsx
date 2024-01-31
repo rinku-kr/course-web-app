@@ -19,14 +19,14 @@ import video from '../../assets/videos/video.mp4';
 
 const Home = () => {
   return (
-    <section className="home">
-      <div className="container">
+    <section className="section section--home">
+      <div className="section__container">
         <Stack
           direction={['column', 'row']}
           justifyContent={['center', 'space-between']}
           alignItems="center"
           height="100%"
-          spacing={['16', '39']}
+          spacing={['20', '39']}
         >
           <VStack width={'full'} alignItems={['center', 'flex-end']}>
             <Heading children="LEARNING THAT GETS YOU" size={'2xl'} />
@@ -38,7 +38,7 @@ const Home = () => {
             </Link>
           </VStack>
           <Image
-            className="vector-logo"
+            className="section__container__image-logo"
             boxSize={'md'}
             src={logo}
             objectFit={'contain'}
@@ -53,7 +53,7 @@ const Home = () => {
           color={'#38A169'}
         />
         <HStack
-          className="brands-icons"
+          className="section__brands-icons"
           justifyContent={'space-evenly'}
           marginTop={'10'}
         >
@@ -64,7 +64,7 @@ const Home = () => {
           <DiAws />
         </HStack>
       </Box>
-      <div className="container-video">
+      <div className="section__container-video">
         <video
           autoPlay={false}
           src={video}
