@@ -43,17 +43,17 @@ const Login = () => {
               focusBorderColor="green.500"
             />
           </Box>
-          <Box>
+          <Box margin={'5'}>
             <Link to="/forgetpassword">
               <Button fontSize={"sm"} variant={"link"}>
                 Forget Password
               </Button>
             </Link>
           </Box>
-          <Button type="submit" colorScheme="green" my="5">
+          <Button type="submit" colorScheme="green" margin="5">
             Login
           </Button>
-          <Box my="5">
+          <Box margin="5">
             New User?
             <Link to="/register">
               <Button colorScheme="green.500" variant={"link"}>
