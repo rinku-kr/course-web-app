@@ -25,7 +25,7 @@ function GetLink({ url = "/", title = "Home", onClose }) {
 const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const isAuthenticated = true;
+  const isAuthenticated = false;
 
   const user = {
     role: "admin",
