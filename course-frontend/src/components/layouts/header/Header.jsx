@@ -1,5 +1,6 @@
-import React from 'react';
-import ColorModeSwitcher from '../../../ColorModeSwitcher';
+import React from "react";
+import ColorModeSwitcher from "../../../ColorModeSwitcher";
+import { Link } from "react-router-dom";
 import {
   Button,
   Drawer,
@@ -8,16 +9,15 @@ import {
   DrawerHeader,
   DrawerOverlay,
   HStack,
-  Link,
   VStack,
   useDisclosure,
-} from '@chakra-ui/react';
-import { RiMenu5Fill, RiLogoutBoxLine, RiDashboardFill } from 'react-icons/ri';
+} from "@chakra-ui/react";
+import { RiMenu5Fill, RiLogoutBoxLine, RiDashboardFill } from "react-icons/ri";
 
-function GetLink({ url = '/', title = 'Home' }) {
+function GetLink({ url = "/", title = "Home", onClose }) {
   return (
-    <Link to={url}>
-      <Button variant={'ghost'}>{title}</Button>
+    <Link to={url} onClick={onClose}>
+      <Button variant={"ghost"}>{title}</Button>
     </Link>
   );
 }
@@ -28,55 +28,61 @@ const Header = () => {
   const isAuthenticated = true;
 
   const user = {
-    role: 'admin',
+    role: "admin",
   };
 
-  const logoutHandler = () => {};
+  const logoutHandler = () => {
+    onClose();
+  };
   return (
     <>
       <ColorModeSwitcher />
       <Button
         onClick={onOpen}
         colorScheme="green"
-        width={'12'}
-        height={'12'}
-        rounded={'full'}
-        position={'fixed'}
+        width={"12"}
+        height={"12"}
+        rounded={"full"}
+        position={"fixed"}
         top="6"
         left="6"
       >
         <RiMenu5Fill />
       </Button>
       <Drawer placement="left" isOpen={isOpen} onClose={onClose}>
-        <DrawerOverlay backdropFilter={'blur(3px)'} />
+        <DrawerOverlay backdropFilter={"blur(3px)"} />
         <DrawerContent>
-          <DrawerHeader borderBottomWidth={'2px'}>Course</DrawerHeader>
+          <DrawerHeader borderBottomWidth={"2px"}>Course</DrawerHeader>
           <DrawerBody>
-            <VStack spacing={'5'} alignItems={'flex-start'}>
-              <GetLink url="/" title="Home" />
-              <GetLink url="/courses" title="All courses" />
-              <GetLink url="/request" title="Request course" />
-              <GetLink url="/about" title="About" />
-              <GetLink url="/contact" title="Contact us" />
+            <VStack spacing={"5"} alignItems={"flex-start"}>
+              <GetLink url="/" title="Home" onClose={onClose} />
+              <GetLink url="/courses" title="All courses" onClose={onClose} />
+              <GetLink
+                url="/request"
+                title="Request course"
+                onClose={onClose}
+              />
+              <GetLink url="/about" title="About" onClose={onClose} />
+              <GetLink url="/contact" title="Contact us" onClose={onClose} />
 
               <HStack
-                justify-content={'space-evenly'}
-                position={'absolute'}
-                bottom={'2rem'}
-                width={'80%'}
-                spacing={'5'}
+                justify-content={"space-evenly"}
+                position={"absolute"}
+                bottom={"2rem"}
+                width={"80%"}
+                spacing={"5"}
               >
                 {isAuthenticated ? (
                   <>
                     <VStack>
                       <HStack>
-                        <Link to="/profile">
-                          <Button variant={'ghost'} colorScheme="green">
+                        <Link to="/profile" onClick={onClose}>
+                          <Button variant={"ghost"} colorScheme="green">
                             Profile
                           </Button>
                         </Link>
                         <Button
-                          variant={'ghost'}
+                          variant={"ghost"}
                           colorScheme="green"
                           onClick={logoutHandler}
                         >
@@ -85,10 +91,10 @@ const Header = () => {
                         </Button>
                       </HStack>
 
-                      {user && user.role === 'admin' && (
-                        <Link to="/admin/dashboard">
-                          <Button variant={'ghost'} colorScheme="green">
-                            <RiDashboardFill style={{ margin: '5px' }} />
+                      {user && user.role === "admin" && (
+                        <Link to="/admin/dashboard" onClick={onClose}>
+                          <Button variant={"ghost"} colorScheme="green">
+                            <RiDashboardFill style={{ margin: "5px" }} />
                             Dashboard
                           </Button>
                         </Link>
@@ -97,10 +103,10 @@ const Header = () => {
                   </>
                 ) : (
                   <>
-                    <Link to="/login">
+                    <Link to="/login" onClick={onClose}>
                       <Button colorScheme="green">Login</Button>
                     </Link>
-                    <Link to="/register">
+                    <Link to="/register" onClick={onClose}>
                       <Button colorScheme="green">Signup</Button>
                     </Link>
                   </>
