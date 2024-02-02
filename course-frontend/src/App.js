@@ -6,6 +6,7 @@ import Courses from "./components/courses/Courses.jsx";
 import Footer from "./components/layouts/footer/Footer.jsx";
 import Login from "./components/auth/Login.jsx";
 import Register from "./components/auth/Register.jsx";
+import ForgetPassword from "./components/auth/ForgetPassword.jsx";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/courses" element={<Courses />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/forgetPassword" element={<ForgetPassword />} />
       </Routes>
       <Footer />
     </Router>
