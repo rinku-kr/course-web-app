@@ -18,7 +18,7 @@ export const fileUploadCss = {
   border: "none",
   height: "100%",
   backgroundColor: "white",
-  color: "green",
+  color: "primary",
 };
 const fileUploadStyle = {
   "&::file-selector-button": fileUploadCss,
@@ -57,7 +57,7 @@ const Register = () => {
               value={name}
               onChange={e => setName(e.target.value)}
               placeholder="Type your name"
-              focusBorderColor="green.500"
+              focusBorderColor="primary"
             />
           </Box>
           <Box margin={"5"}>
@@ -69,7 +69,7 @@ const Register = () => {
               value={email}
               onChange={e => setEmail(e.target.value)}
               placeholder="Type your email"
-              focusBorderColor="green.500"
+              focusBorderColor="primary"
             />
           </Box>
           <Box margin={"5"}>
@@ -81,7 +81,7 @@ const Register = () => {
               value={password}
               onChange={e => setPassword(e.target.value)}
               placeholder="Type your password"
-              focusBorderColor="green.500"
+              focusBorderColor="primary"
             />
           </Box>
           <Box margin={"5"}>
@@ -91,18 +91,18 @@ const Register = () => {
               required
               id="avatar"
               type="file"
-              focusBorderColor="green.500"
+              focusBorderColor="primary"
               css={fileUploadStyle}
               onChange={avatarHandler}
             />
           </Box>
-          <Button type="submit" colorScheme="green" margin="5">
+          <Button type="submit" colorScheme="primary" margin="5">
             Sign Up
           </Button>
           <Box margin="5">
             Already signed up?
             <Link to="/login">
-              <Button colorScheme="green.500" variant={"link"}>
+              <Button colorScheme="primary" variant={"link"}>
                 Login
               </Button>
               here

@@ -39,7 +39,7 @@ const Header = () => {
       <ColorModeSwitcher />
       <Button
         onClick={onOpen}
-        colorScheme="green"
+        colorScheme="primary"
         width={"12"}
         height={"12"}
         rounded={"full"}
@@ -77,13 +77,13 @@ const Header = () => {
                     <VStack>
                       <HStack>
                         <Link to="/profile" onClick={onClose}>
-                          <Button variant={"ghost"} colorScheme="green">
+                          <Button variant={"ghost"} colorScheme="primary">
                             Profile
                           </Button>
                         </Link>
                         <Button
                           variant={"ghost"}
-                          colorScheme="green"
+                          colorScheme="primary"
                           onClick={logoutHandler}
                         >
                           <RiLogoutBoxLine />
@@ -93,7 +93,7 @@ const Header = () => {
 
                       {user && user.role === "admin" && (
                         <Link to="/admin/dashboard" onClick={onClose}>
-                          <Button variant={"ghost"} colorScheme="green">
+                          <Button variant={"ghost"} colorScheme="primary">
                             <RiDashboardFill style={{ margin: "5px" }} />
                             Dashboard
                           </Button>
@@ -104,10 +104,10 @@ const Header = () => {
                 ) : (
                   <>
                     <Link to="/login" onClick={onClose}>
-                      <Button colorScheme="green">Login</Button>
+                      <Button colorScheme="primary">Login</Button>
                     </Link>
                     <Link to="/register" onClick={onClose}>
-                      <Button colorScheme="green">Signup</Button>
+                      <Button colorScheme="primary">Signup</Button>
                     </Link>
                   </>
                 )}

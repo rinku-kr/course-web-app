@@ -21,9 +21,9 @@ const ResetPassword = () => {
             value={password}
             onChange={e => setPassword(e.target.value)}
             placeholder="Type your new password"
-            focusBorderColor="green.500"
+            focusBorderColor="primary"
           />
-          <Button type="submit" w="full" colorScheme="green">
+          <Button type="submit" w="full" colorScheme="primary">
             Reset Password
           </Button>
         </VStack>

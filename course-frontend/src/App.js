@@ -8,6 +8,7 @@ import Login from "./components/auth/Login.jsx";
 import Register from "./components/auth/Register.jsx";
 import ForgetPassword from "./components/auth/ForgetPassword.jsx";
 import ResetPassword from "./components/auth/ResetPassword.jsx";
+import Contact from "./components/contact/Contact.jsx";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/courses" element={<Courses />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgetpassword" element={<ForgetPassword />} />

@@ -50,11 +50,11 @@ const Course = ({
       />
       <Stack direction={["column", "row"]} alignItems="center">
         <Link to={`/course/${id}`}>
-          <Button colorScheme="green">Watch Now</Button>
+          <Button colorScheme="primary">Watch Now</Button>
         </Link>
         <Button
           variant="ghost"
-          colorScheme="green"
+          colorScheme="primary"
           onClick={() => addToPlaylistHandler(id)}
         >
           Add to playlist
@@ -88,7 +88,7 @@ const Courses = () => {
         value={keyword}
         onChange={e => setKeyword(e.target.value)}
         placeholder="What do you want to learn?"
-        focusBorderColor="green.500"
+        focusBorderColor="primary.500"
       />
       <HStack overflowX="auto" paddingY="8">
         {categories.map((item, index) => (

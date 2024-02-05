@@ -12,7 +12,7 @@ const Footer = () => {
       <Stack direction={["column", "row"]}>
         <VStack alignItems={["center", "flex-start"]} width="full">
           <Heading children="All Rights Reserved" color="white" size="lg" />
-          <Heading children="course@gmail.com" color="green.500" size="sm" />
+          <Heading children="course@gmail.com" color="primary" size="sm" />
         </VStack>
         <HStack
           spacing={["2", "10"]}

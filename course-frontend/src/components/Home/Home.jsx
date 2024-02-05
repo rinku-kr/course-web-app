@@ -40,14 +40,14 @@ const Home = () => {
               textAlign={["center", "left"]}
             />
             <Link to="/courses">
-              <Button size={"lg"} colorScheme="green">
+              <Button size={"lg"} colorScheme="primary">
                 Get Started
               </Button>
             </Link>
           </VStack>
           <Image
             className="section__container__image-logo"
-            boxSize={"md"}
+            boxSize="lg"
             src={logo}
             objectFit={"contain"}
           />
@@ -58,7 +58,7 @@ const Home = () => {
           children="OUR BRANDS"
           textAlign={"center"}
           fontFamily="body"
-          color={"#38A169"}
+          color={"primary"}
         />
         <HStack
           className="section__brands-icons"

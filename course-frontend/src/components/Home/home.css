@@ -21,7 +21,7 @@
   transition: color 0.5s;
 }
 .section__brands-icons > svg:hover {
-  color: #38a169;
+  color: #E53E3E;
   cursor: pointer;
 }
 

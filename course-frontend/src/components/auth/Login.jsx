@@ -28,7 +28,7 @@ const Login = () => {
               value={email}
               onChange={e => setEmail(e.target.value)}
               placeholder="Type your email"
-              focusBorderColor="green.500"
+              focusBorderColor="primary"
             />
           </Box>
           <Box margin={"5"}>
@@ -40,7 +40,7 @@ const Login = () => {
               value={password}
               onChange={e => setPassword(e.target.value)}
               placeholder="Type your password"
-              focusBorderColor="green.500"
+              focusBorderColor="primary"
             />
           </Box>
           <Box margin={'5'}>
@@ -50,13 +50,13 @@ const Login = () => {
               </Button>
             </Link>
           </Box>
-          <Button type="submit" colorScheme="green" margin="5">
+          <Button type="submit" colorScheme="primary" margin="5">
             Login
           </Button>
           <Box margin="5">
             New User?
             <Link to="/register">
-              <Button colorScheme="green.500" variant={"link"}>
+              <Button colorScheme="primary" variant={"link"}>
                 Sign Up
               </Button> here
             </Link>
