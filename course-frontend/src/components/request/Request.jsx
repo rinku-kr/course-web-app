@@ -11,15 +11,15 @@ import {
   Textarea,
 } from "@chakra-ui/react";
 
-const Contact = () => {
+const Request = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [course, setCourse] = useState("");
 
   return (
     <Container h="90vh">
       <VStack h="full" justifyContent="center" spacing="25">
-        <Heading children="Contact Us" />
+        <Heading children="Request Course" />
         <form style={{ width: "100%" }}>
           <Box margin={"5"}>
             <FormLabel htmlFor="text" children="Name" />
@@ -46,13 +46,13 @@ const Contact = () => {
             />
           </Box>
           <Box margin={"5"}>
-            <FormLabel htmlFor="message" children="Message" />
+            <FormLabel htmlFor="course" children="Course" />
             <Textarea
               required
-              id="message"
-              value={message}
-              onChange={e => setMessage(e.target.value)}
-              placeholder="Type your message"
+              id="course"
+              value={course}
+              onChange={e => setCourse(e.target.value)}
+              placeholder="Type your course"
               focusBorderColor="primary"
             />
           </Box>
@@ -60,8 +60,8 @@ const Contact = () => {
             Send Mail
           </Button>
           <Box margin="5">
-            Request for a course?
-            <Link to="/request">
+            See available courses!{" "}
+            <Link to="/courses">
               <Button colorScheme="primary" variant={"link"}>
                 Click
               </Button>{" "}
@@ -74,4 +74,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Request;
