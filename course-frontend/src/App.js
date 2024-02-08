@@ -10,6 +10,7 @@ import ForgetPassword from "./components/auth/ForgetPassword.jsx";
 import ResetPassword from "./components/auth/ResetPassword.jsx";
 import Contact from "./components/contact/Contact.jsx";
 import Request from "./components/request/Request.jsx";
+import About from "./components/about/About.jsx";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/courses" element={<Courses />} />
         <Route path="/request" element={<Request />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgetpassword" element={<ForgetPassword />} />
