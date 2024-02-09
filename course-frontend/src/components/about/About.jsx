@@ -6,7 +6,14 @@ import {
   Stack,
   VStack,
   Text,
+  Button,
+  Box,
+  HStack,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+import video from "../../assets/videos/video.mp4";
+import { RiSecurePaymentFill } from "react-icons/ri";
+import termsAndCondition from "../../assets/docs/termsAndCondition";
 
 const Creator = () => {
   return (
@@ -29,6 +36,46 @@ const Creator = () => {
   );
 };
 
+const VideoPlayer = () => {
+  return (
+    <Box>
+      <video
+        muted
+        autoPlay={false}
+        src={video}
+        controls
+        controlsList="nodownload nofullscreen noremoteplayback"
+        disablePictureInPicture
+        disableRemotePlayback
+      ></video>
+    </Box>
+  );
+};
+
+const TermAndCondition = ({ termsAndCondition }) => {
+  return (
+    <Box>
+      <Heading size="md" textAlign={["center", "left"]} my="5">
+        Terms & Condition
+      </Heading>
+      <Box h="sm" p="5" overflowY="scroll">
+        <Text
+          fontFamily="Raleway"
+          letterSpacing="widest"
+          textAlign={["center", "left"]}
+        >
+          {termsAndCondition}
+        </Text>
+        <Heading
+          children="Refund only applicable for cancellation within 7 days."
+          my="5"
+          size="xs"
+        />
+      </Box>
+    </Box>
+  );
+};
+
 const About = () => {
   return (
     <Container maxW="container.sm" padding="16" boxShadow="lg">
@@ -39,7 +86,25 @@ const About = () => {
           We are a video streaming platform offering premium courses exclusively
           for premium users!
         </Text>
+
+        <Link to="/subscribe">
+          <Button variant="ghost" colorScheme="primary">
+            Checkout Plan
+          </Button>
+        </Link>
       </Stack>
+      <VideoPlayer />
+
+      <TermAndCondition termsAndCondition={termsAndCondition} />
+      <HStack my="5" p="5">
+        <RiSecurePaymentFill />
+        <Heading
+          children="Payment is secured by razorpay"
+          fontSize="xs"
+          fontFamily="Raleway"
+          textTransform="uppercase"
+        />
+      </HStack>
     </Container>
   );
 };
