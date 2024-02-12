@@ -16,6 +16,7 @@ import NotFound from "./components/layouts/notFound/NotFound.jsx";
 import PaymentSuccess from "./components/payments/PaymentSuccess.jsx";
 import PaymentFail from "./components/payments/PaymentFail.jsx";
 import CourseDetail from "./components/courseDetails/CourseDetail.jsx";
+import Profile from "./components/profile/Profile.jsx";
 
 function App() {
   window.addEventListener("contextmenu", e => {
@@ -31,6 +32,7 @@ function App() {
         <Route path="/request" element={<Request />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgetpassword" element={<ForgetPassword />} />
