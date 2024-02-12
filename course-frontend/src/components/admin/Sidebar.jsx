@@ -10,7 +10,7 @@ import {
 const Sidebar = () => {
   const location = useLocation();
   return (
-    <VStack spacing="4" p="12" boxShadow="-2px 0 10px rgba(255, 70, 193, 0.5)">
+    <VStack spacing="4" p="12" boxShadow="-2px 0 10px rgba(107, 255, 193, 0.5)">
       <LinkButton
         Icon={RiDashboardFill}
         text="Dashboard"
@@ -47,7 +47,7 @@ function LinkButton({ url, Icon, text, active }) {
       <Button
         variant="ghost"
         fontSize="lg"
-        colorScheme={active ? "primary" : ""}
+        colorScheme={active ? "green" : ""}
       >
         <Icon style={{ margin: "4px" }} />
         {text}
