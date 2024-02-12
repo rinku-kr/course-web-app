@@ -11,6 +11,7 @@ import {
 // import yellowCursor from "../../../assets/images/yellowCursor.png";
 import Sidebar from "../Sidebar";
 import { RiArrowUpLine, RiArrowDownLine } from "react-icons/ri";
+import { LineChart, DoughnutChart } from "./Chart.js";
 
 const UserDataBox = ({ title, qty, qtyPercentage, profit }) => {
   return (
@@ -114,6 +115,7 @@ const Dashboard = () => {
             size="md"
           />
           {/* Line Graph */}
+          <LineChart />
         </Box>
 
         <Grid templateColumns={["1fr", "2fr 1fr"]}>
@@ -133,7 +135,8 @@ const Dashboard = () => {
           </Box>
           <Box p={["0", "14"]} boxSizing="border-box" py="4">
             <Heading children="Users" textAlign="center" size="md" mb="4" />
-            {/* Graph */}
+            {/* Doughnut Graph */}
+            <DoughnutChart />
           </Box>
         </Grid>
       </Box>
