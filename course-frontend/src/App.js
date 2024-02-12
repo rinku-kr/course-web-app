@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/layouts/header/Header.jsx";
 import Home from "./components/home/Home.jsx";
@@ -19,6 +18,10 @@ import CourseDetail from "./components/courseDetails/CourseDetail.jsx";
 import Profile from "./components/profile/Profile.jsx";
 import UpdateProfile from "./components/profile/UpdateProfile.jsx";
 import ChangePassword from "./components/profile/ChangePassword.jsx";
+import Dashboard from "./components/admin/dashboard/Dashboard.jsx";
+import AdminCourses from "./components/admin/adminCourses/AdminCourses.jsx";
+import CreateCourse from "./components/admin/createCourse/CreateCourse.jsx";
+import Users from "./components/admin/users/Users.jsx";
 
 function App() {
   window.addEventListener("contextmenu", e => {
@@ -45,6 +48,12 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="/paymentsuccess" element={<PaymentSuccess />} />
         <Route path="/paymentfail" element={<PaymentFail />} />
+
+        {/* Admin Routes */}
+        <Route path="/admin/dashboard" element={<Dashboard />} />
+        <Route path="/admin/courses" element={<AdminCourses />} />
+        <Route path="/admin/createcourse" element={<CreateCourse />} />
+        <Route path="/admin/users" element={<Users />} />
       </Routes>
       <Footer />
     </Router>
