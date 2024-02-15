@@ -97,6 +97,7 @@ const AdminCourses = () => {
           addLectureHandler={addLectureHandler}
         />
       </Box>
+      
       <Sidebar />
     </Grid>
   );
