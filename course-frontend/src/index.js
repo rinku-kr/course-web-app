@@ -11,12 +11,12 @@ const root = ReactDOM.createRoot(container);
 // Extend the theme!
 const colors = {
   primary: {
-    900: "#63171B",
-    800: "#822727",
-    700: "#9B2C2C",
-    600: "#C53030",
-    500: "#E53E3E",
-    400: "#F56565",
+    900: "#1C4532",
+    800: "#22543D",
+    700: "#276749",
+    600: "#2F855A",
+    500: "#38A169",
+    400: "#48BB78",
   },
   secondary: {
     900: "#5F370E",
