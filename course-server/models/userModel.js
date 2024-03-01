@@ -47,5 +47,13 @@ const schema = mongoose.Schema({
       poster: String,
     },
   ],
+
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+
+  ResetPasswordToken: String,
+  ResetPasswordExpire: String,
 });
 export const User = mongoose.model("User", schema);
