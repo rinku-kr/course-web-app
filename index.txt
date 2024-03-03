@@ -1,0 +1,70 @@
+FOLDER STRUCTURE!
+# config
+- config.env config files to store all env variables
+- database.js database file contain connectDB function to database
+
+# controllers
+- CourseController.js contains all controllers related to the course & watcher
+- UserController.js contains all controllers related to the user & watcher
+- PaymentController.js contains all controllers related to the payment and subscription
+- OtherController.js contains remaining controllers like contact, course request, dashboard
+
+# middlewares
+- Auth.js contains middlewares related to authenticated
+- CatchAsyncError.js contains catchAsyncError middlewares
+- Multer.js contains multer middlewars
+- Error.js contains custom error middlewares
+
+# Models
+- Course.js course schema & model
+- Payment.js payment schema & model
+- Stats.js stats schema & model
+- User.js user schema & model
+
+# Routes
+- CourseRoutes.js routes related to course
+- UserRoutes.js routes related to user
+- PaymentRoutes.js routes related to payment
+- OtherRoutes.js remaining routes
+
+# Utils
+- DataUri.js contains getDataUri function 
+- ErrorHandler.js custom handler function class
+- SendEmail.js contains sendEmail function with nodemailer
+- SendToken.js contains sendToken function to set jwt token in cookie
+
+# Server
+- Cloudinary set cloudinary configuration
+- Razorpay create instance of razorpay
+- ConnectDB connect database
+- NodeCron set a schedule to create a new stat eact month
+- Listen listen to port
+
+#App
+- Config configure dotenv
+- UserMiddlewares express.json, express.urlencoded, cookieParser, cors, ErrorMiddleware
+- UserRoutes user, course, payment, other
+
+#Api's
+- Register To register a new user
+- Login To login
+- Logout To logout
+
+# Config variable
+- PORT port to listen
+- PLAN_ID subscription plan id created from razorpay
+- RAZORPAY_API_KEY razorpay api key
+- RAZORPAY_API_SECRET razorpay api secret
+- JWT_SECRET any random secret for jwt
+- FRONTEND_URI fronend hosting address
+- MONGO_URI database uri
+- CLOUDINARY_CLIENT_NAME cloudinary username
+- CLOUDINARY_CLIENT_API cloudinary api key
+- CLOUDINARY_CLIENT_SECRET cloudinary api secret
+- RESET_PASSWORD_SECRET any random secret for password token
+- SMPT_HOST email service host 
+- SMPT_PORT email service port 
+- SMPT_USER email service userid
+- SMPT_PASS email service password
+- MY_MAIL mail to receive contact form & request form data
+- REFUND_DAYS Refund applicable days
