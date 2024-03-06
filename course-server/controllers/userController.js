@@ -1,4 +1,5 @@
-export const getAllCourses = (req, res, next) => {
+
+export const getAllCourses = async(req, res, next) => {
     res.send("hello world");
   };
   
