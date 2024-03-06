@@ -1,4 +1,4 @@
-import express from "express";
+import express, { urlencoded } from "express";
 import dotenv from "dotenv";
 import ErrorMiddleware from "./middlewares/Error.js";
 
@@ -7,6 +7,14 @@ dotenv.config({
 });
 
 const app = express();
+
+// Using middlewares
+app.use(express.json());
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
 
 // Importing & Using Routes!
 import course from "./routes/courseRoutes.js";

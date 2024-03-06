@@ -1,69 +1,72 @@
 import mongoose from "mongoose";
 
-const schema = mongoose.Schema({
-  title: {
-    type: String,
-    required: [true, "Please enter your course title"],
-    minLength: [4, "Title must be at least 4 characters"],
-    maxLength: [80, "Title can not exceed 80 characters"],
-  },
-  description: {
-    type: String,
-    required: [true, "Please enter your descripton"],
-    minLength: [20, "Title must be at least 20 characters"],
-  },
-  lectures: [
-    {
-      title: {
-        type: String,
-        required: true,
-      },
-      description: {
-        type: String,
-        required: true,
-      },
-      video: {
-        public_id: {
-          type: String,
-          required: true,
-        },
-        url: {
-          type: String,
-          required: true,
-        },
-      },
+const schema = mongoose.Schema(
+  {
+    title: {
+      type: String,
+      required: [true, "Please enter your course title"],
+      minLength: [4, "Title must be at least 4 characters"],
+      maxLength: [80, "Title can not exceed 80 characters"],
     },
-  ],
+    description: {
+      type: String,
+      required: [true, "Please enter your descripton"],
+      minLength: [20, "Title must be at least 20 characters"],
+    },
+    lectures: [
+      {
+        title: {
+          type: String,
+          required: true,
+        },
+        description: {
+          type: String,
+          required: true,
+        },
+        video: {
+          public_id: {
+            type: String,
+            required: true,
+          },
+          url: {
+            type: String,
+            required: true,
+          },
+        },
+      },
+    ],
 
-  poster: {
-    public_id: {
+    poster: {
+      public_id: {
+        type: String,
+        required: true,
+      },
+      url: {
+        type: String,
+        required: true,
+      },
+    },
+    views: {
+      type: Number,
+      default: 0,
+    },
+    numOfVideos: {
+      type: Number,
+      default: 0,
+    },
+    category: {
       type: String,
       required: true,
     },
-    url: {
+    createdBy: {
       type: String,
-      required: true,
+      required: [true, "Enter course creator name"],
     },
+    // createdAt: {
+    //   type: String,
+    //   default: Date.now,
+    // },
   },
-  views: {
-    type: Number,
-    default: 0,
-  },
-  numOfVideos: {
-    type: Number,
-    default: 0,
-  },
-  category: {
-    type: String,
-    required: true,
-  },
-  createdBy: {
-    type: String,
-    required: [true, "Enter course creator name"],
-  },
-  createdAt: {
-    type: String,
-    default: Date.now,
-  },
-});
+  { timestamps: true }
+);
 export const Course = mongoose.model("Course", schema);
