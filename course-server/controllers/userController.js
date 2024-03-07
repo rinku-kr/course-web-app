@@ -1,5 +1,31 @@
+import { catchAsyncError } from "../middlewares/catchAsyncError.js";
+import ErrorHandler from "../utils/ErrorHandler.js";
+import { User } from "../models/userModel.js";
+import { sendToken } from "../utils/sendToken.js";
 
-export const getAllCourses = async(req, res, next) => {
-    res.send("hello world");
-  };
-  
+export const register = catchAsyncError(async (req, res, next) => {
+  const { name, email, password } = req.body;
+
+  // const file = req.file;
+
+  if (!name || !email || !password)
+    return next(new ErrorHandler("Please enter all fields", 400));
+
+  let user = await User.findOne({ email });
+
+  if (user) return next(new ErrorHandler("User already exist", 409));
+
+  // Upload file on cloudinary!
+
+  user = await User.create({
+    name,
+    email,
+    password,
+    avatar: {
+      public_id: "temp",
+      url: "temp",
+    },
+  });
+
+  sendToken(res, user, "Register successfully", 201);
+});

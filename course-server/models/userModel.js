@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import validator from "validator";
+import jwt from "jsonwebtoken";
 
 const schema = mongoose.Schema({
   name: {
@@ -56,4 +57,11 @@ const schema = mongoose.Schema({
   ResetPasswordToken: String,
   ResetPasswordExpire: String,
 });
+
+schema.methods.getJwtToken = function () {
+  return jwt.sign({ _id: this._id }, process.env.JWT_SECRET, {
+    expiresIn: "15d",
+  });
+};
+
 export const User = mongoose.model("User", schema);
