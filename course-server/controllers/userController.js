@@ -29,3 +29,32 @@ export const register = catchAsyncError(async (req, res, next) => {
 
   sendToken(res, user, "Register successfully", 201);
 });
+export const login = catchAsyncError(async (req, res, next) => {
+  const { email, password } = req.body;
+
+  // const file = req.file;
+
+  if (!email || !password)
+    return next(new ErrorHandler("Please enter all fields", 400));
+
+  const user = await User.findOne({ email }).select("+password");
+
+  if (!user) return next(new ErrorHandler("Incorrect email or password", 401));
+
+  const isMatch = await user.comparePassword(password);
+  if (!isMatch)
+    return next(new ErrorHandler("Incorrect email or password", 401));
+
+  sendToken(res, user, `Welcome back, ${user.name}`, 200);
+});
+export const logout = catchAsyncError(async (req, res, next) => {
+  res
+    .status(200)
+    .cookie("token", null, {
+      expires: new Date(Date.now()),
+    })
+    .json({
+      success: true,
+      message: "Logged out successfully!",
+    });
+});
